@@ -10,7 +10,7 @@ OOPL MIDTERM EXAMINATION
 
 ## Tasks for Group
 Below are the duties that have been assigned to you. All of this information, as well as who assigned them, can be seen in the GitHub "Issues" section.
-- [ ] **Task #1**: Create a UI for incoming data. - *Assigned to: Venturina, Diana May N.*
+- [x] **Task #1**: Create a UI for incoming data. - *Assigned to: Venturina, Diana May N.*
 - [x] **Task #2**: Create a class that will hold, alter and send data. - *Eusebio, Jessel Grace O.*
 - [x] **Task #3**: Create a class for sorting patients based on their time, consultation, and name. - *Assigned to: Suriben, Karyl*
 ---
