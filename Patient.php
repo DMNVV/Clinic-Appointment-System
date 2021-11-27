@@ -1,6 +1,7 @@
 <?php
  
 class Patient {
+    private $id;
     private $name;
     private $age;
     private $gender;
@@ -8,6 +9,7 @@ class Patient {
     private $consultation;
  
     public function __construct($name, $age, $gender, $address) {
+        $this->id = uniqid("patient_");
         $this->name = $name;
         $this->age = $age;
         $this->gender = $gender;
@@ -20,6 +22,10 @@ class Patient {
  
  
     // Getters
+    public function getId() {
+        return $this->id;
+    }
+    
     public function getName() {
         return $this->name;
     }
@@ -60,5 +66,10 @@ class Patient {
     public function setConsultation($key, $value) {
         $this->consultation[$key] = $value;
     }
+
+    public function __wakeup(){
+        foreach (get_object_vars($this) as $k => $v) {
+            $this->{$k} = $v;
+        }
+    }
 }
-Ad by Valueimpression
