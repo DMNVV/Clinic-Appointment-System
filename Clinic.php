@@ -3,6 +3,7 @@
 class Clinic {
     private $name;
     private $patients = [];
+    private $appointments = [];
 
     public function __construct($name) {
         $this->name = $name;
@@ -15,6 +16,10 @@ class Clinic {
 
     public function getAllPatients() {
         return $this->patients;
+    }
+
+    public function getAllAppointments() {
+        return $this->appointments;
     }
 
     public function getPatient($id) {
@@ -35,6 +40,14 @@ class Clinic {
         Util::saveData();
     }
 
+    public function addAppointment($id, $nurse, $datetime) {
+        if (!isset($this->appointments[$datetime])) {
+            $this->appointments[$datetime] = [$this->getPatient($id), $nurse];
+            return true;
+        }
+        
+        return false;
+    }
     public function deletePatient($id) {
         $i = 0;
         foreach ($this->patients as $patient) {

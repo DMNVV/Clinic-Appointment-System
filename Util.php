@@ -45,4 +45,12 @@ class Util {
 
         return true;
     }
+
+    static function reset() {
+        global $_DATA;
+
+        unset($_SESSION["data"]);
+
+        return true;
+    }
 }

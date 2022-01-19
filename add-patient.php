@@ -41,7 +41,9 @@
 
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Dashboard</a></li>
-                <li class="nav-item"><a href="/patients.php" class="nav-link active">Patient Info</a></li>
+                <li class="nav-item"><a href="/appointments" class="nav-link active" aria-current="page">Appointments</a></li>
+
+                <li class="nav-item"><a href="/patients.php" class="nav-link">Patient Info</a></li>
             </ul>
         </header>
 

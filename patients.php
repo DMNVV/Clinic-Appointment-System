@@ -22,11 +22,11 @@
             case "name":
                 $patients = Util::sortByName($patients, $isAsc);
                 break;
-            case "consultation":
-                $patients = Util::sortByConsultation($patients, $isAsc);
-                break;
             case "time":
                 $patients = Util::sortByTime($patients, $isAsc);
+                break;
+            case "time":
+                $patients = Util::sortByConsultation($patients, $isAsc);
                 break;
         }
     }
@@ -56,6 +56,7 @@
 
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Dashboard</a></li>
+                <li class="nav-item"><a href="/appointments.php" class="nav-link" aria-current="page">Appointments</a></li>
                 <li class="nav-item"><a href="/patients.php" class="nav-link active">Patient Info</a></li>
             </ul>
         </header>
@@ -78,19 +79,17 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Address</th>
+                        <th scope="col">Name / Address</th>
                         <th scope="col">Age</th>
                         <th scope="col">Gender</th>
-                        <th scope="col">Consultation</th>
-                        <th scope="col">Time</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">C. Details</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($patients as $patient) { ?>
                     <tr>
                         <th scope="row"><?= $patient->getName(); ?><br></th>
-                        <td><?= $patient->getAddress(); ?></td>
                         <td><?= $patient->getAge(); ?></td>
                         <td><?= $patient->getGender(); ?></td>
                         <?php if (!$patient->getConsultation("consulted")) { ?>
@@ -101,9 +100,9 @@
                         <td>Time: <?= $patient->getConsultation("time"); ?></td>
                         <td>
                             <?php if (!$patient->getConsultation("consulted")) { ?>
-                            <a href="?done=<?= $patient->getId(); ?>" type="button" class="btn btn-outline-success btn-sm">Mark as Done</a>
+                            <a href="?done=<?= $patient->getId(); ?>" class="text-success">Done</a>
                             <?php }?>
-                            <a href="?delete=<?= $patient->getId(); ?>" type="button" class="btn btn-outline-danger btn-sm">Delete</a>
+                            <a href="?delete=<?= $patient->getId(); ?>" class="text-danger">Delete</a>
                         </td>
                     </tr>
                     <?php } ?>
