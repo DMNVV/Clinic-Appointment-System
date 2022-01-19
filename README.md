@@ -1,5 +1,5 @@
 ﻿# Clinic Appointment System
-OOPL MIDTERM EXAMINATION AND FINALS
+OOPL MIDTERM EXAMINATION
 
 ## Contributors
 |Role   |Name   | Section | Assigned Tasks |
