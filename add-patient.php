@@ -58,7 +58,7 @@
                     <select id="gender" class="form-control" name="gender">
                         <option disabled selected>Select Gender</option>
                         <option value="male">Male</option>
-                        <option value="male">Female</option>
+                        <option value="female">Female</option>
                     </select>
                 </div>
                 <div class="mb-3 col-sm-12">
